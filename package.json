@@ -1,0 +1,43 @@
+{
+  "name": "behind-cg",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/copy-decoders.mjs",
+    "dev": "next dev",
+    "prebuild": "node scripts/copy-decoders.mjs",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "models": "node scripts/optimize-models.mjs",
+    "test:e2e": "node tests/e2e/run.mjs",
+    "test:webhook": "node tests/e2e/webhook.mjs",
+    "test:backend": "node tests/e2e/backend.mjs",
+    "test:3d": "node tests/e2e/model3d.mjs",
+    "test:sample-model": "node -e \"require('fs').mkdirSync('models-src',{recursive:true})\" && node tests/fixtures/make-test-glb.mjs models-src/plant-based-sleeping-mask.glb && npm run models"
+  },
+  "dependencies": {
+    "@google/model-viewer": "^4.4.0",
+    "@gsap/react": "^2.1.2",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.0",
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.15.1",
+    "marked": "^18.2.0",
+    "next": "^16.4.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.5",
+    "simple-icons": "^16.37.0"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "^4.5.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "axe-core": "^4.14.0",
+    "puppeteer-core": "^25.17.0",
+    "typescript": "^7.0.2"
+  }
+}
